@@ -21,7 +21,7 @@ namespace dotnet.Models
                 return AllPies.Where(p => p.IsPieOfTheWeek);
             }
         }
-        public Pie? GetPieByID(int pieId)
+        public Pie? GetPieById(int pieId)
         {
             return _pieShopDbContext.Pies.FirstOrDefault(p=> p.PieId == pieId);
         }

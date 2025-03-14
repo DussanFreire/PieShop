@@ -5,7 +5,7 @@ namespace dotnet.Models
 	{
 		IEnumerable<Pie> AllPies { get; }
 		IEnumerable<Pie> PiesOfTheWeek { get; }
-		Pie? GetPieByID(int pieId);
+		Pie? GetPieById(int pieId);
 	}
 }
 

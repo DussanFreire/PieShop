@@ -6,8 +6,6 @@ using Microsoft.AspNetCore.Mvc;
 using dotnet.Models;
 using dotnet.ViewModels;
 
-// For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
-
 namespace dotnet.Controllers
 {
     public class PieController : Controller
@@ -26,6 +24,15 @@ namespace dotnet.Controllers
         {
             PieListViewModel pieListViewModel = new PieListViewModel(_pieRepository.AllPies, "Cheese cakes");
             return View(pieListViewModel);
+        }
+
+        public IActionResult Details(int id)
+        {
+            Pie? pie = _pieRepository.GetPieById(id);
+            if (pie == null)
+                return NotFound();
+
+            return View(pie);
         }
     }
 }
