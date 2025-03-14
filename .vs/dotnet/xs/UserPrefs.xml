@@ -1,0 +1,51 @@
+﻿<Properties StartupConfiguration="{340C9E13-B09E-22CF-2266-9251BE79A212}|https">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Views/Pie/List.cshtml">
+    <Files>
+      <File FileName="Program.cs" />
+      <File FileName="appsettings.json" />
+      <File FileName="appsettings.Development.json" />
+      <File FileName="Models/ErrorViewModel.cs" />
+      <File FileName="Models/Pie.cs" />
+      <File FileName="Models/Category.cs" />
+      <File FileName="Models/IPieRepository.cs" />
+      <File FileName="Models/MockCategoryRespository.cs" />
+      <File FileName="Models/MockPieRepository.cs" />
+      <File FileName="Controllers/PieController.cs" />
+      <File FileName="Views/Pie/List.cshtml" Line="13" Column="1" />
+      <File FileName="Views/_ViewStart.cshtml" />
+      <File FileName="Views/_ViewImports.cshtml" />
+      <File FileName="Views/Shared/_ValidationScriptsPartial.cshtml" />
+      <File FileName="Views/Shared/Error.cshtml" />
+      <File FileName="obj/Debug/net8.0/dotnet.csproj.FileListAbsolute.txt" />
+      <File FileName="obj/dotnet.csproj.nuget.dgspec.json" />
+      <File FileName="ViewModels/PieListViewModel.cs" />
+      <File FileName="Controllers/HomeController.cs" />
+      <File FileName="Views/Shared/_Layout.cshtml" />
+      <File FileName="Views/Shared/_ViewStart.cshtml" />
+    </Files>
+    <Pads>
+      <Pad Id="ProjectPad">
+        <State name="__root__">
+          <Node name="dotnet" expanded="True">
+            <Node name="dotnet" expanded="True" selected="True">
+              <Node name="Controllers" expanded="True" />
+              <Node name="Models" expanded="True" />
+              <Node name="ViewModels" expanded="True" />
+              <Node name="Views" expanded="True">
+                <Node name="Pie" expanded="True" />
+              </Node>
+              <Node name="appsettings.json" expanded="True" />
+            </Node>
+          </Node>
+        </State>
+      </Pad>
+    </Pads>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MultiItemStartupConfigurations />
+  <MonoDevelop.Ide.ItemProperties.dotnet PreferredExecutionTarget="/Applications/Arc.app" />
+</Properties>
