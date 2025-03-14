@@ -1,31 +1,26 @@
 using System.Diagnostics;
 using Microsoft.AspNetCore.Mvc;
 using dotnet.Models;
+using dotnet.ViewModels;
 
 namespace dotnet.Controllers;
 
 public class HomeController : Controller
 {
-    private readonly ILogger<HomeController> _logger;
+        private readonly IPieRepository _pieRepository;
+        private readonly ICategoryRepository _categoryRepository;
 
-    public HomeController(ILogger<HomeController> logger)
-    {
-        _logger = logger;
-    }
+        public HomeController(IPieRepository pieRepository, ICategoryRepository categoryRepository)
+        {
+            _pieRepository = pieRepository;
+            _categoryRepository = categoryRepository;
 
-    public IActionResult Index()
-    {
-        return View();
-    }
+        }
 
-    public IActionResult Privacy()
-    {
-        return View();
-    }
-
-    [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
-    public IActionResult Error()
-    {
-        return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
-    }
+        public IActionResult Index()
+        {
+            var piesOfTheWeek = _pieRepository.PiesOfTheWeek;
+            var homeViewModel = new HomeViewModel(piesOfTheWeek);
+            return View(homeViewModel);
+        }
 }
