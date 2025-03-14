@@ -3,22 +3,20 @@ using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
 
-builder.Services.AddScoped<ICategoryRepository, MockCategoryRespository>();
-builder.Services.AddScoped<IPieRepository, MockPieRepository>();
+builder.Services.AddScoped<ICategoryRepository, CategoryRepository>();
+builder.Services.AddScoped<IPieRepository, PieRepository>();
 // Add services to the container.
 builder.Services.AddControllersWithViews();
-builder.Services.AddDbContext<PieShopDbContext>(options => options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
+builder.Services.AddDbContext<PieShopDbContext>(options =>
+    options.UseSqlite(builder.Configuration["ConnectionStrings:PieShopDbContextConnection"]));
 var app = builder.Build();
 
 app.UseStaticFiles();
 
-//Configure the HTTP request pipeline.
 if (!app.Environment.IsDevelopment())
 {
     app.UseDeveloperExceptionPage();
-    //app.UseExceptionHandler("/Home/Error");
-    // The default HSTS value is 30 days. You may want to change this for production scenarios, see https://aka.ms/aspnetcore-hsts.
-    //app.UseHsts();
+
 }
 
 //app.UseHttpsRedirection();
@@ -33,5 +31,5 @@ if (!app.Environment.IsDevelopment())
 //    name: "default",
 //    pattern: "{controller=Home}/{action=Index}/{id?}");
 app.MapDefaultControllerRoute();
-
+DbInitializer.Seed(app);
 app.Run();
