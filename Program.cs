@@ -13,6 +13,7 @@ builder.Services.AddSession();
 builder.Services.AddHttpContextAccessor();
 
 builder.Services.AddControllersWithViews();
+builder.Services.AddRazorPages();
 builder.Services.AddDbContext<PieShopDbContext>(options =>
     options.UseSqlite(builder.Configuration["ConnectionStrings:PieShopDbContextConnection"]));
 var app = builder.Build();
@@ -27,8 +28,8 @@ if (!app.Environment.IsDevelopment())
 }
 
 app.MapDefaultControllerRoute();
+app.MapRazorPages();
 
 DbInitializer.Seed(app);
-
 app.Run();
 
